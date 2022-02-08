@@ -9,7 +9,13 @@ import SwiftUI
 
 struct AppView: View {
     var body: some View {
-        Text("App View")
+        TabView {
+            AvocadosView()
+                .tabItem {
+                    Image("tabicon-branch")
+                    Text("Avocados")
+                }
+        }
     }
 }
 
