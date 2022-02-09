@@ -8,6 +8,16 @@
 import SwiftUI
 
 struct HeaderView: View {
+    
+    // MARK:  Properties
+    @State private var showHeadline: Bool = false
+    
+    var slideInAnimation: Animation {
+        Animation.spring(response: 1.5, dampingFraction: 0.5, blendDuration: 0.5)
+            .speed(1)
+            .delay(0.5)
+    }
+    
     var body: some View {
         ZStack {
             Image("avocado-slice-1")
@@ -39,7 +49,11 @@ struct HeaderView: View {
                 .background(Color("ColorBlackTransparentLight"))
             }
             .frame(width: 285, height: 105, alignment: .center)
-            .offset(x: -66, y: 75)
+            .offset(x: -66, y: showHeadline ? 75 : 220)
+            .animation(slideInAnimation)
+            .onAppear {
+                self.showHeadline.toggle()
+            }
         }
         .frame(width: 480, height: 320, alignment: .center)
     }

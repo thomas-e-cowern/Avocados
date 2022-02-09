@@ -9,8 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Avocoado Recipes")
-            .padding()
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack (alignment: .center, spacing: 20) {
+                
+                // MARK: Footer
+                VStack (alignment: .center, spacing: 20) {
+                    Text("All About Avocados")
+                        .font(.system(.title, design: .serif))
+                        .fontWeight(.bold)
+                        .foregroundColor(Color("ColorGreenAdaptive"))
+                    .padding(8)
+                }
+            }
+        }
     }
 }
 
