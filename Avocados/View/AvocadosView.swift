@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct AvocadosView: View {
+    
+    // MARK:  Properties
+    @State private var pulseItAnimation: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
@@ -16,6 +20,9 @@ struct AvocadosView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 240, height: 240, alignment: .center)
                 .shadow(color: Color("ColorBlackTransparentDark"), radius: 12, x: 0, y: 8)
+                .scaleEffect(self.pulseItAnimation ? 1 : 0.5)
+                .opacity(self.pulseItAnimation ? 1 : 0.5)
+                .animation(Animation.easeInOut(duration: 1.5), value: pulseItAnimation)
             VStack {
                 Text("Avocados")
                     .font(.system(size: 42, weight: .bold, design: .serif))
@@ -40,6 +47,9 @@ struct AvocadosView: View {
                 .aspectRatio(contentMode: .fill)
         )
         .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            self.pulseItAnimation.toggle()
+        }
     }
 }
 
