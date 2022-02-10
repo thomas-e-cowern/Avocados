@@ -45,7 +45,17 @@ struct DishesView: View {
                 }
             }
             
-            Image(systemName: "heart.circle")
+            VStack {
+                HStack {
+                    Divider()
+                }
+                Image(systemName: "heart.circle")
+                    .font(Font.title.weight(.ultraLight))
+                    .imageScale(.large)
+                HStack {
+                    Divider()
+                }
+            }
             
             VStack {
                 HStack () {
