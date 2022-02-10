@@ -27,6 +27,9 @@ struct ContentView: View {
                     }
                 }
                 
+                // MARK:  Dishes view
+                DishesView()
+                
                 // MARK: Footer
                 VStack (alignment: .center, spacing: 20) {
                     Text("All About Avocados")
@@ -37,7 +40,7 @@ struct ContentView: View {
                 }
                 .frame(maxWidth: 640)
                 .padding()
-                .padding(.bottom, 85)
+                .padding(.bottom, 8)
                 Text("Everything you wanted to know about Avocados but were afraid to ask")
                     .font(.system(.body, design: .serif))
                     .multilineTextAlignment(.center)

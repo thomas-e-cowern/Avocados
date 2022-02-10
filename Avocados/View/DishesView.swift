@@ -11,7 +11,7 @@ struct DishesView: View {
     var body: some View {
         HStack () {
             // Column 1
-            VStack {
+            VStack (alignment: .leading, spacing: 4) {
                 HStack () {
                     Image("icon-toasts")
                         .resizable()
@@ -45,7 +45,7 @@ struct DishesView: View {
                 }
             }
             
-            VStack {
+            VStack (alignment: .center, spacing: 16) {
                 HStack {
                     Divider()
                 }
@@ -57,7 +57,7 @@ struct DishesView: View {
                 }
             }
             
-            VStack {
+            VStack (alignment: .trailing, spacing: 4) {
                 HStack () {
                     Text("Guacamole")
                     Spacer()
