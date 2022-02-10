@@ -33,10 +33,8 @@ struct ContentView: View {
                 // MARK: Footer
                 VStack (alignment: .center, spacing: 20) {
                     Text("All About Avocados")
-                        .font(.system(.title, design: .serif))
                         .fontWeight(.bold)
-                        .foregroundColor(Color("ColorGreenAdaptive"))
-                    .padding(8)
+                        .modifier(TitleModifier())
                 }
                 .frame(maxWidth: 640)
                 .padding()
@@ -49,6 +47,15 @@ struct ContentView: View {
         }
         .edgesIgnoringSafeArea(.all)
         .padding(.bottom, 85)
+    }
+}
+
+struct TitleModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(.title, design: .serif))
+            .foregroundColor(Color("ColorGreenAdaptive"))
+            .padding(8)
     }
 }
 
