@@ -15,17 +15,44 @@ struct RecipeCardView: View {
     
     // MARK:  Body
     var body: some View {
-        VStack {
+        VStack (alignment: .leading, spacing: 0) {
             Image(recipe.image)
                 .resizable()
                 .scaledToFit()
                 .overlay(
-                    Image(systemName: "bookmark")
-                        .font(Font.title.weight(.light))
-                        .foregroundColor(Color.white)
-                        .imageScale(.small)
-                        .shadow(color: Color("ColorBlackTransparentLight"), radius: 2, x: 0, y: 0)
+                    HStack {
+                        Spacer()
+                        VStack {
+                            Image(systemName: "bookmark")
+                                .font(Font.title.weight(.light))
+                                .foregroundColor(Color.white)
+                                .imageScale(.small)
+                            .shadow(color: Color("ColorBlackTransparentLight"), radius: 2, x: 0, y: 0)
+                            .padding(.trailing, 20)
+                            .padding(.top, 22)
+                            Spacer()
+                        }
+                    }
                 )
+            VStack (alignment: .leading, spacing: 12) {
+                // MARK:  Title
+                Text(recipe.title)
+                    .font(.system(.title, design: .serif))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("ColorGreenMedium"))
+                    .lineLimit(1)
+                
+                // MARK:  Headline
+                Text(recipe.headline)
+                    .font(.system(.body, design: .serif))
+                    .foregroundColor(Color.gray)
+                    .italic()
+                
+                // MARK:  Rating
+                // MARK:  Cooking
+            } // End of VStack
+            .padding()
+            .padding(.bottom, 12)
         }
         .background(Color.white)
         .cornerRadius(12)
