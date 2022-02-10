@@ -28,7 +28,12 @@ struct ContentView: View {
                 }
                 
                 // MARK:  Dishes view
+                Text("Avocado Dishes")
+                    .fontWeight(.bold)
+                    .modifier(TitleModifier())
+                
                 DishesView()
+                    .frame(maxWidth: 640)
                 
                 // MARK: Footer
                 VStack (alignment: .center, spacing: 20) {
