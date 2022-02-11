@@ -52,7 +52,7 @@ struct RecipeCardView: View {
                 RecipeRatingView(recipe: recipe)
                 
                 // MARK:  Cooking
-                
+                RecipeCookingView(recipe: recipe)
                 
             } // End of VStack
             .padding()
