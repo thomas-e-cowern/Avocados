@@ -13,11 +13,20 @@ struct RecipeRatingView: View {
 
     var recipe: Recipe
 
+    // MARK:  Body
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        HStack (alignment: .center, spacing: 5) {
+            ForEach(1...(recipe.rating), id: \.self) { _ in
+                Image(systemName: "star.fill")
+                    .font(.body)
+                .foregroundColor(Color.yellow)
+            }
+        }
     }
 }
 
+// MARK:  Preview
 struct RecipeRatingView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeRatingView(recipe: recipeData[0])
