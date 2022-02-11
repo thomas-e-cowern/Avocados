@@ -38,9 +38,43 @@ struct RecipeDetailView: View {
                     RecipeCookingView(recipe: recipe)
                     
                     // ingredients
+                    Text("Ingredients")
+                        .fontWeight(.bold)
+                        .modifier(TitleModifier())
                     
+                    VStack (alignment: .leading, spacing: 5) {
+                        ForEach(recipe.ingredients, id: \.self) { item in
+                            VStack (alignment: .leading, spacing: 5) {
+                                Text(item)
+                                    .font(.footnote)
+                                    .multilineTextAlignment(.leading)
+                            }
+                        }
+                    }
                     
                     // instructions
+                    
+                    Text("Instructions")
+                        .fontWeight(.bold)
+                        .modifier(TitleModifier())
+                    
+                    ForEach(recipe.instructions, id: \.self) { item in
+                        VStack (alignment: .center, spacing: 5) {
+                            
+                            Image(systemName: "chevron.down.circle")
+                                .resizable()
+                                .frame(width: 42, height: 42, alignment: .center)
+                                .imageScale(.large)
+                                .font(Font.title.weight(.ultraLight))
+                                .foregroundColor(Color("ColorGreenAdaptive"))
+                            
+                            Text(item)
+                                .lineLimit(nil)
+                                .multilineTextAlignment(.center)
+                                .font(.system(.body, design: .serif))
+                            .frame(minHeight: 100)
+                        } // End of VStack
+                    } // End of ForEach
                 }
                 .padding(.horizontal, 24)
                 .padding(.vertical, 12)
