@@ -82,6 +82,24 @@ struct RecipeDetailView: View {
             } // End of VStack
         } // End of Scrollview
         .edgesIgnoringSafeArea(.top)
+        .overlay(
+            HStack {
+                Spacer()
+                VStack {
+                    Button(action: {
+                    
+                    }, label: {
+                        Image(systemName: "chevron.down.circle.fill")
+                            .font(.title)
+                            .foregroundColor(Color.white)
+                            .shadow(radius: 4)
+                    }) // End of Button
+                        .padding(.trailing, 20)
+                        .padding(.top, 24)
+                    Spacer()
+                } // End of VStack
+            } // End of HStack
+        ) // End of Overlay
     }
 }
 
